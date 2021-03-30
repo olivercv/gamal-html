@@ -561,6 +561,16 @@ li {
   position: relative;
 }
 
+
+/* arreglos menu */
+
+.original .main-logo {
+ /* background-color: #cccccc!important; */
+ width: 300px;
+}
+
+
+
 .main-nav__header-one .container-box {
   position: relative;
   display: block;
@@ -798,6 +808,12 @@ li {
 }
 .stricked-menu .header_btn_1 {
   padding: 17px 0 17px;
+}
+
+/* Arreglo menu fijo */
+
+.stricked-menu .main-logo {
+  width: 150px;
 }
 
 /*--------------------------------------------------------------
