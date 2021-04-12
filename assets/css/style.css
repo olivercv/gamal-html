@@ -7605,3 +7605,24 @@ iframe.event_details_google-map {
     transform: translateY(-30px);
   }
 }
+
+
+
+
+
+
+.container-fluid{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.proposal {
+  position: relative;
+  display: block;
+  padding: 145px 0 107px;
+  background: #f1f1f1;
+}
