@@ -3541,7 +3541,7 @@ li {
   position: relative;
   display: block;
   background: var(--thm-primary);
-  padding: 65px 42px 97px;
+  padding: 70px 42px 100px;
 }
 .mission_and_vission_two_icon_box {
   padding-bottom: 30px;
@@ -3644,7 +3644,7 @@ li {
   position: relative;
   display: block;
   background: var(--thm-primary);
-  padding: 93px 42px 65px;
+  padding: 85px 42px 58px;
 }
 .mission_and_vission_two_text_box_two {
 }
@@ -3715,7 +3715,8 @@ li {
 .events_two {
   position: relative;
   display: block;
-  padding: 145px 0 317px;
+  /* padding: 145px 0 317px; */
+  padding: 145px 0 100px;
 }
 .events_two .block-title {
 }
