@@ -3,79 +3,29 @@
 
     
     if ($(".instafeed-gallery-feed").length) {
-        var userFeed = new Instafeed({
-            get: "user",
-            userId: 17841400002897423,
-            accessToken: "IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD",
-            resolution: "standard_resolution",
-            useHttp: "true",
-            limit: 10,
-            template: 
-              // '<a href="{{image}}">'+
-                '<div class="img-featured-container">'+
-                  '<div class="img-backdrop"></div>'+
-                  '<div class="description-container">'+
-                    // '<p class="caption">{{caption}}</p>'+
-                    '<span class="likes"><i class="icon ion-heart"></i> {{likes}}</span>'+
-                    '<span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span>'+
-                  '</div>'+
-                  '<img src="{{image}}" class="img-responsive">'+
-                '</div>',
-              // '</a>'+
-            target: "instafeed-gallery-feed",
-            after: function() {
-              // disable button if no more results to load
-              if (!this.hasNext()) {
-                btnInstafeedLoad.setAttribute('disabled', 'disabled');
-              }
-              
-              var owl = $(".owl-carousel"),
-                  owlSlideSpeed = 300;
-          
-              // init owl    
-              $(document).ready(function(){
-                owl.owlCarousel({
-                  // navContainer: '.owl-nav-custom',
-                  // dotsContainer: '.owl-dots-custom',
-                  margin:10,
-                  loop:true,
-                  margin:10,
-                  nav:true,
-                  responsive:{
-                    0:{
-                      items:1
-                    },
-                    200:{
-                      items:2
-                    },
-                    400:{
-                      items:3
-                    },
-                    768:{
-                      items:5
-                    }
-                  }
-                });
-              });
-          
-              // keyboard controls
-              $(document.documentElement).keydown(function(event) {
-                if (event.keyCode == 37) {
-                  owl.trigger('prev.owl.carousel', [owlSlideSpeed]);
-                }
-                else if (event.keyCode == 39) {
-                  owl.trigger('next.owl.carousel', [owlSlideSpeed]);
-                }
-              });
+       
+        var token = 'IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD', // learn how to obtain it below
+        userid = 17841400002897423, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
+        num_photos = 4; // how much photos do you want to get
+     
+    $.ajax({
+        url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent', // or /users/self/media/recent for Sandbox
+        dataType: 'jsonp',
+        type: 'GET',
+        data: {access_token: token, count: num_photos},
+        success: function(data){
+             console.log(data);
+            for( x in data.data ){
+                $('ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
+                // data.data[x].images.thumbnail.url - URL of image 150х150
+                // data.data[x].images.standard_resolution.url - URL of image 612х612
+                // data.data[x].link - Instagram post URL 
             }
-          });
-          
-          userFeed.run();
-          
-          var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
-          btnInstafeedLoad.addEventListener("click", function() {
-            userFeed.next()
-          });
+        },
+        error: function(data){
+            console.log(data); // send the error notifications to console
+        }
+    });
 
     }
     
