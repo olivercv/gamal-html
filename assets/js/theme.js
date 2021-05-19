@@ -5,8 +5,8 @@
     if ($(".instafeed-gallery-feed").length) {
         var userFeed = new Instafeed({
             get: "user",
-            userId: 6443571543,
-            accessToken: "6443571543.3a81a9f.5fa5cc39d0314deba22a8f148881852d",
+            userId: 17841400002897423,
+            accessToken: "IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD",
             resolution: "standard_resolution",
             useHttp: "true",
             limit: 10,
