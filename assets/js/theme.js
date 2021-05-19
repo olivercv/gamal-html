@@ -7,9 +7,9 @@
        
         
         var galleryFeed = new Instafeed({
-            get: "user",
+            get: "olivercamachovelasco",
             userId: 17841400002897423,
-            accessToken: "IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD",
+            accessToken: "IGQVJVRWRvWllQMFV6dGp0UVhrYWRRTGRzSGJlc20tSm4wdF9GMGpXVDJ1MHZApc3BEZAWZAObG5nSW1iWDhOWEJLNmMxSjVQYnJTSUFMZAldyNDUwUjNva01uR2NIUTZAabi1UN05FX19rc1kzTkQtLXNKRAZDZD",
             resolution: "standard_resolution",
             useHttp: "true",
             limit: 6,
