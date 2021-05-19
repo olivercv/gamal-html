@@ -2,30 +2,24 @@
     "use strict";
 
     
-    if ($(".instafeed-gallery-feed").length) {
+    if ($(".instafeed").length) {
        
-        var token = 'IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD', // learn how to obtain it below
-        userid = 17841400002897423, // User ID - get it in source HTML of your Instagram profile or look at the next example :)
-        num_photos = 4; // how much photos do you want to get
+       
+       
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: '17841400002897423',
+            clientId: '20210519172842',
+            accessToken: 'IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD',
+            resolution: 'standard_resolution',
+            template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+            sortBy: 'most-recent',
+            limit: 4,
+            links: false
+          });
+          userFeed.run();
+       
      
-    $.ajax({
-        url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent', // or /users/self/media/recent for Sandbox
-        dataType: 'jsonp',
-        type: 'GET',
-        data: {access_token: token, count: num_photos},
-        success: function(data){
-             console.log(data);
-            for( x in data.data ){
-                $('ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
-                // data.data[x].images.thumbnail.url - URL of image 150х150
-                // data.data[x].images.standard_resolution.url - URL of image 612х612
-                // data.data[x].link - Instagram post URL 
-            }
-        },
-        error: function(data){
-            console.log(data); // send the error notifications to console
-        }
-    });
 
     }
     
