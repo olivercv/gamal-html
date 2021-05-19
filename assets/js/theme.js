@@ -2,22 +2,35 @@
     "use strict";
 
     
-    if ($(".instafeed").length) {
+    if ($(".gallery").length) {
        
        
-       
-        var userFeed = new Instafeed({
-            get: 'user',
-            userId: '17841400002897423',
-            clientId: '20210519172842',
-            accessToken: 'IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD',
-            resolution: 'standard_resolution',
-            template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
-            sortBy: 'most-recent',
-            limit: 4,
-            links: false
+        
+        var galleryFeed = new Instafeed({
+            get: "user",
+            userId: 17841400002897423,
+            accessToken: "IGQVJVWkU2c1VuVElPejZAjTnpvTDhzMUIyREZAXdC1NOEltRWZAjaUJXTXZAURi00WElHWWVPVnlBb2w4aGVsWGFndHpVdGVEY09GM0h5UUdKQkswS0l6dDFzOEg2U0VTODZA6MXBHX2w1QlpJUU9QMWFkNgZDZD",
+            resolution: "standard_resolution",
+            useHttp: "true",
+            limit: 6,
+            template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="{{image}}"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
+            target: "instafeed-gallery-feed",
+            after: function() {
+              // disable button if no more results to load
+              if (!this.hasNext()) {
+                btnInstafeedLoad.setAttribute('disabled', 'disabled');
+              }
+            },
           });
-          userFeed.run();
+          galleryFeed.run();
+          
+          var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
+          btnInstafeedLoad.addEventListener("click", function() {
+            galleryFeed.next()
+          });
+          
+       
+    
        
      
 
