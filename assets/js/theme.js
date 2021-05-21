@@ -2,33 +2,20 @@
     "use strict";
 
     
-    if ($(".gallery").length) {
+    if ($(".instagram-gallery-medium").length) {
        
        
         
-        var galleryFeed = new Instafeed({
-            get: "user",
-            userId: 17841400002897423,
-            accessToken: "IGQVJVRWRvWllQMFV6dGp0UVhrYWRRTGRzSGJlc20tSm4wdF9GMGpXVDJ1MHZApc3BEZAWZAObG5nSW1iWDhOWEJLNmMxSjVQYnJTSUFMZAldyNDUwUjNva01uR2NIUTZAabi1UN05FX19rc1kzTkQtLXNKRAZDZD",
-            resolution: "standard_resolution",
-            useHttp: "true",
-            limit: 6,
-            template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="{{image}}"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
-            target: "instafeed-gallery-feed",
-            after: function() {
-              // disable button if no more results to load
-              if (!this.hasNext()) {
-                btnInstafeedLoad.setAttribute('disabled', 'disabled');
-              }
-            },
-          });
-          galleryFeed.run();
-          
-          var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
-          btnInstafeedLoad.addEventListener("click", function() {
-            galleryFeed.next()
-          });
-          
+        jQuery.fn.FCInstagram.accessData = {
+            accessToken: "IGQVJYbWttSjNsbFQ4MWIydTRWN0xKdVZAZAVlhtRkN3V0pNUk5CMGJmeWo0R1ZAKWEZA5TFhudzVST3l3X3JPV05SZAlBNazI5UEl5cEJOZAVBmRm53a1BCQXFFd1Nlbjl5bVFEYTdjUXR1YV9sTjZAGVmJ6eAZDZD", // Token
+        };
+        $('#instafeed').FCInstagram({
+            max: 9, // A number between 1 and 25 of photos to show. Default: 9
+            autoplay: true, // Set autoplay video: true/false. Default: false
+            complete: function () { // A callback function to execute after the display of the photos.
+                console.log('completed');
+            }
+        });
        
     
        
