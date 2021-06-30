@@ -1,7 +1,55 @@
 (function ($) {
-    "use strict";
+"use strict";
 
-    
+
+
+        // var nextPageToken = "";
+        // // Resultados por pagina
+        // var resPorPagina = 5;
+        // // Paginas a mostrar
+        // var paginas = 1;
+        // var key = "AIzaSyDO3D9BPxPJvvq1nEowR65Qg_wA_ZQwdxE";
+        // var idCanal = "UCh6vWix4KkqB2yjvXn3Kddw";
+        // var url = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&channelId=" + idCanal + "&part=snippet,id&order=date&maxResults=" + resPorPagina;
+        // $.getJSON(url, function (data) {
+        // for (var k in data.items) {
+        // var tituloVideo=data.items[k]["snippet"].title;
+        // var urlVideo="https://www.youtube.com/watch?v=" + data.items[k]["id"].videoId;
+        // var fechaVideo=data.items[k]["snippet"].publishedAt;
+        // var thumbnail = data.items[k]["snippet"].thumbnails.medium.url;
+        
+        // console.log(k, data.items[k]["id"].kind);
+        // if(data.items[k]["id"].kind == 'youtube#video'){
+        //     $("#videoList").append(
+
+        //     '<div class="col-xl-4 col-lg-6 col-md-6 filter-item prop">'+
+        //         '<div class="news_2_single">'+
+        //             '<div class="video_one_inner">'+
+        //                 '<div class="video_one_inner_img">'+
+        //                     '<img src="'+thumbnail+'" alt="">'+
+        //                     '<div class="video_one_btn_box">'+
+        //                         '<a href="'+urlVideo+'" class="video_one_btn video-popup"><i class="icon-006-play"></i></a>'+
+        //                     '</div>'+
+        //                 '</div>'+
+        //                 '<div class="news_2_content">'+
+        //                     '<h4>Propuestas <span>'+fechaVideo+'</span></h4>'+
+        //                     '<p><a href="#">'+tituloVideo+'</a></p>'+
+        //                 '</div>'+
+        //             '</div>'+
+        //         '</div>'+
+                
+        //     '</div>'
+            
+        //     );
+        // }
+        
+        // }
+        
+        // });
+
+
+
+
     if ($(".instagram-gallery-medium").length) {
        
        

@@ -6837,6 +6837,7 @@ iframe.event_details_google-map {
   font-family: var(--thm-gilroy-bold);
   line-height: 32px;
   margin: 0;
+  height: 40px;
 }
 .news_2_content p a {
   color: var(--thm-base);
