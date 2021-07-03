@@ -7720,3 +7720,17 @@ iframe.event_details_google-map {
 }
 
 /* END - MEDIUM */
+
+.embed-container {
+  position: relative;
+  padding-bottom: 120%;
+  height: 0;
+  overflow: hidden;
+}
+.embed-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
