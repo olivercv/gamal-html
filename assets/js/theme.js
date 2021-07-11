@@ -95,39 +95,39 @@
     }
    
     // HeaderTop One Inner Left Text Carousel 
-    if ($(".featured_causes_right_carousel").length) {
-        $(".featured_causes_right_carousel").owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: false,
-            smartSpeed: 500,
-            autoHeight: false,
-            autoplay: true,
-            dots: true,
-            autoplayTimeout: 10000,
-            navText: [
-                '<span class="fa fa-angle-left"></span>',
-                '<span class="fa fa-angle-right"></span>',
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                600: {
-                    items: 1,
-                },
-                800: {
-                    items: 1,
-                },
-                1024: {
-                    items: 1,
-                },
-                1200: {
-                    items: 1,
-                },
-            },
-        });
-    }
+    // if ($(".featured_causes_right_carousel").length) {
+    //     $(".featured_causes_right_carousel").owlCarousel({
+    //         loop: true,
+    //         margin: 10,
+    //         nav: false,
+    //         smartSpeed: 500,
+    //         autoHeight: false,
+    //         autoplay: true,
+    //         dots: true,
+    //         autoplayTimeout: 10000,
+    //         navText: [
+    //             '<span class="fa fa-angle-left"></span>',
+    //             '<span class="fa fa-angle-right"></span>',
+    //         ],
+    //         responsive: {
+    //             0: {
+    //                 items: 1,
+    //             },
+    //             600: {
+    //                 items: 1,
+    //             },
+    //             800: {
+    //                 items: 1,
+    //             },
+    //             1024: {
+    //                 items: 1,
+    //             },
+    //             1200: {
+    //                 items: 1,
+    //             },
+    //         },
+    //     });
+    // }
    
     
     //Progress Bar / Levels
